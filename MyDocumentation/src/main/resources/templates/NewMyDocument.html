@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{./styles.css}">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+		<div class="logo">
+			<h3>My Documentation</h3>
+		</div>
+
+		<div class="nav_menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+<h1>My Documents</h1>
+	<hr>
+	
+
+	<form action="#" th:action="@{/savemyDocuments}" th:object="${document}"
+		method="POST">
+		<input type="text" th:field="*{header}" placeholder="header"> <br>
+		<input type="text" th:field="*{content}"  placeholder="content"> <br>
+
+		<button type=submit>Save Documents</button>
+	</form>
+</body>
+</html>

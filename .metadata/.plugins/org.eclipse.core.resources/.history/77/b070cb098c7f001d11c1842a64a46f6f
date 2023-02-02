@@ -1,0 +1,14 @@
+package com.mahedi.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jakarta.annotation.Resource;
+
+@Resource 
+public class VendorController {
+
+	@GetMapping("{id}")
+	public String getdata(long id) {
+		return new Vendor("C1","sfd","sdf","dfdf");
+	}
+}

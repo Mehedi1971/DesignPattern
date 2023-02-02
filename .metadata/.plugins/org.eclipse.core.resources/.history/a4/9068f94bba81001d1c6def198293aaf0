@@ -1,0 +1,38 @@
+package com.mahedi.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mahedi.model.Employee;
+import com.mahedi.model.OnlineShop;
+import com.mahedi.repository.OnlineShopRepository;
+@Service
+public class OnlineShopServiceImpl implements OnlineShopService{
+
+	
+	@Autowired
+	private OnlineShopRepository onlineShopRepository;
+	
+	@Override
+	public List<OnlineShop> getAllProducts() {
+		return onlineShopRepository.findAll();
+	}
+
+	@Override
+	public OnlineShop getProductById(long id) {
+		Optional<OnlineShop> optional=onlineShopRepository.findById(id);
+		OnlineShop onlineShop=null;
+		if(optional.isPresent()) {
+			onlineShop=optional.get();
+		}
+		else {
+			throw new RuntimeException("Employee not found for id:" +id);
+			
+		}
+		return onlineShop;
+	}
+
+}

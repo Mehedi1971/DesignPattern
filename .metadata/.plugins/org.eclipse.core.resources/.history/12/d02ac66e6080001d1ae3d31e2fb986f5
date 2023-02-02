@@ -1,0 +1,14 @@
+package com.mahedi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
+public class PatientService {
+	@Autowired
+	private RestTemplate template = new RestTemplate();
+
+	public Object[] findAlle() {
+		return template.getForObject("http://localhost:8087/api/patient", Object[].class);
+	}
+
+}

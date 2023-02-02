@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${updatelist}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <input  type="text" th:field="*{testname}" readonly>
+    <input type="checkbox" th:field="*{checkbox}" onclick="abc()" id="myCheck">
+<!--    <button th:if="*{checkbox}?true:false" th:type=submit>update </button>-->
+    <input type="submit" id="text" style="visibility: hidden">
+
+</form>
+<a th:href="@{/newsave}" class="nav_link">Update</a>
+<script>
+    function abc(){
+        var checkBox = document.getElementById("myCheck");
+        // var text = document.getElementById("text");
+        if (checkBox.checked == true){
+            document.getElementById("text").click();
+        }if (checkBox.checked == false){
+            document.getElementById("text").click();
+        }
+    }
+
+</script>
+</body>
+</html>

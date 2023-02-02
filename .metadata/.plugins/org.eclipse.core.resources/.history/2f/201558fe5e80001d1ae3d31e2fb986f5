@@ -1,0 +1,16 @@
+package com.mahedi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class PatientController {
+	
+	@Autowired
+	private PatientService patientService;
+	
+	@GetMapping("/api")
+	public Object[] api() {
+		System.out.println()
+	}
+
+}

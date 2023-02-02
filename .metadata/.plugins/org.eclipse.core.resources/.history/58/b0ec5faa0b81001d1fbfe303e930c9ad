@@ -1,0 +1,15 @@
+package com.mahedi;
+
+import java.util.Scanner;
+
+public class Sqrt_x {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		int n=input.nextInt();
+		
+		System.out.println(Math.sqrt(n));
+	}
+
+}

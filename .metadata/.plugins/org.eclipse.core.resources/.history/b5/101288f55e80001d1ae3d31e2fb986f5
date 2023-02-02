@@ -1,0 +1,11 @@
+package com.mahedi.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class PatientController {
+	@GetMapping("/api")
+	public Object[] api() {
+		System.out.println()
+	}
+
+}

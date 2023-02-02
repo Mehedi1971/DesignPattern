@@ -1,0 +1,9 @@
+package com.mahedi.model;
+
+public class Vendor {
+	private long id;
+	private  String name;
+	private String address;
+	private String phoneNum;
+	
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class=container>
+
+	<div class="img">
+		<img th:src="@{./card_img.jpg}">
+	</div>
+	<div class="details">
+	<!--<h3 th:text="${products.productName}"></h3>
+			<p th:text="${products.productDesc}"></p>
+			<p th:text="${products.proiductQuantity}"></p>
+			<p th:text="${products.productPrice}"></p>
+			<p th:text="${products.proiductAvilability}"></p>  -->
+			
+			<input type="hidden" th:field="*{id}"> <input type="text"
+			th:field="*{firstName}"> <br> <input type="text"
+			th:field="*{lastName}"> <br> <input type="text"
+			th:field="*{email}"><br>
+	</div>
+</div>
+</body>
+</html>

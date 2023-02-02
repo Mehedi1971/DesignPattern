@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{./styles.css}">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<h3>My Documentation</h3>
+		</div>
+
+		<div class="nav_menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="Hero-container">
+		<div class="side-menu">
+			<div class="menu-opt">
+				<a href=".Java">JAVA</a>
+			</div>
+			<div class="menu-opt">
+				<a href="#">MYSQL</a>
+			</div>
+			<div class="menu-opt">
+				<a href="#">SPRING BOOT</a>
+			</div>
+			<div class="menu-opt">
+				<a href="#">DATA STRUCTURE</a>
+			</div>
+		</div>
+
+		<div class="contents">
+			<div class="content" th:each="document : ${listDocuments}">
+
+				<h3 th:text="${document.header}"></h3>
+				<p th:text="${document.content}"></p>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

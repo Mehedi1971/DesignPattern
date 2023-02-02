@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+
+		<a th:href="@{/showNewEmployeeFrom}">Add Employee</a>
+		<h1>Employee List</h1>
+		<table border=1>
+			<thead>
+				<tr>
+					<th>Employee's First Name</th>
+					<th>Employee's Last Name</th>
+					<th>Employee's Email</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee : ${listEmployees}">
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.Email}"></td>
+					<td><a th:href="@{/showFromForUpdate/{id}(id=${employee.id})}">Update</a>
+						<a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
+					<td><select class="form-select" name="refferedBy"
+						id="refferedBy" style="height: 30px; font-size: 12px;">
+							
+							<option th:each="refDr : ${listEmployees}" th:text="${refDr.lastName[0]}">
+					</select></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

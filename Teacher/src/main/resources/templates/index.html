@@ -1,0 +1,34 @@
+<!doctype html >
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a th:href="@{/addnew}">Add Employee</a>
+
+<table style="border: 1px">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher : ${listofTeacher}">
+        <td th:text="${teacher.name}"></td>
+        <td th:text="${teacher.email}"></td>
+        <td><a th:href="@{/update/{id}(id=${teacher.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${teacher.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

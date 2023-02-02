@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<form th:action="@{save}" th:object="${lab}" method="post">-->
+<!--    <input type="text" th:field="*{testname}"> <br>-->
+<!--    <input type="text" th:field="*{checkbox}">-->
+
+<!--</form>-->
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>testname</th>
+        <th>checkbox</th>
+    </tr>
+    <tr th:each="lab : ${listoftest}" id="a">
+        <div th:if="${lab.checkbox}?true:false" >
+            <td th:text="${lab.id}"></td>
+            <td th:text="${lab.testname}"></td>
+            <td th:text="${lab.checkbox}"></td>
+            <td><a th:href="@{/update/{id}(id=${lab.id})}" >Update</a></td>
+            <td>
+                <form  th:action="@{/save}"  enctype="multipart/form-data"  method="post">
+<!--                    <input type="hidden" name="id">-->
+<!--                    <input  type="testname" name="testname" readonly>-->
+                    <a th:href="@{/update/{id}(id=${lab.id})}" ><input th:text="${lab.id}" type="checkbox" name="checkbox" onclick="abc()" id="myCheck"></a></td>
+
+                    <input type="submit" id="text" style="visibility: hidden">
+                </form>
+
+            </td>
+<!--            <td></td>-->
+        </div>
+    <tr>
+
+    </tr>
+    </tr>
+</table>
+<!--th:action="@{/save}"  enctype="multipart/form-data"  method="post"-->
+
+<script>
+    console.log(document.querySelectorAll("a"))
+    function abc(){
+        var checkBox = document.getElementById("myCheck");
+        // var text = document.getElementById("text");
+        if (checkBox.checked == true){
+            document.getElementById("text").click();
+        }if (checkBox.checked == false){
+            document.getElementById("text").click();
+        }
+    }
+
+</script>
+<!--<div>-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>id</th>-->
+<!--            <th>testname</th>-->
+<!--            <th>checkbox</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="lab : ${listoftest}">-->
+<!--            -->
+<!--                <td th:text="${lab.id}"></td>-->
+<!--                <td th:text="${lab.testname}"></td>-->
+<!--                <td th:text="${lab.checkbox}"></td>-->
+<!--            -->
+
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
+
+<div>
+
+        <div id="abc" th:each="lab : ${listoftest}">
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='ESR'">ESR</span> </span>
+                </div>
+
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='Hemoglobin (HB) %'">Hemoglobin (HB) %</span> </span>
+            </div>
+
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='TC of WBC'">TC of WBC</span> </span>
+            </div>
+
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='DC of WBC'">DC of WBC</span> </span>
+            </div>
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='TC of RBC'">TC of RBC</span> </span>
+            </div>
+            <div >
+                <span th:if="${lab.checkbox}?true:false">
+
+                    <span th:if="${lab.testname}=='DC of RBC'">DC of RBC</span> </span>
+            </div>
+<!--            <td >-->
+<!--                <span th:if="${lab.checkbox}==true">b</span>-->
+<!--            </td>-->
+<!--            <td >-->
+<!--                <span th:if="${lab.checkbox}==true">c</span>-->
+<!--            </td>-->
+<!--            <td >-->
+<!--                <span th:if="${lab.checkbox}==true">d</span>-->
+<!--            </td>-->
+<!--            <td >-->
+<!--                <span th:if="${lab.checkbox}==true">e</span>-->
+<!--            </td>-->
+<!--            <td>b</td>-->
+<!--            <td>c</td>-->
+<!--            <td th:text="${lab.checkbox}?'true':'false'">d</td>-->
+<!--            <td>e</td>-->
+        </div>
+</div>
+</div>
+<!--<script>-->
+<!--    let a=document.getElementById('abc').innerText;-->
+<!--    console.log(a);-->
+<!--</script>-->
+</body>
+</html>

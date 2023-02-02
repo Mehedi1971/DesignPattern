@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/saveReportInfo}" enctype="multipart/form-data" method="POST">
+<!--      th:object="${listofinfo}"-->
+
+    <input th:type="rHospitalName" name="rHospitalName"><br>
+    <input th:type="rHospitalDivision" name="rHospitalDivision"><br>
+    <input th:type="rHospitalUpozila" name="rHospitalUpozila"><br>
+    <input th:type="rHospitalDistrict" name="rHospitalDistrict"><br>
+    <input th:type="rHospitalReportName" name="rHospitalReportName"><br>
+    <input th:type="rHospitalSpeech" name="rHospitalSpeech"><br>
+    <input th:type="file" name="img" class="form-control"><br>
+    <input th:type="rHospitalPhone1" name="rHospitalPhone1"><br>
+    <input th:type="rHospitalPhone2" name="rHospitalPhone2"><br>
+    <input th:type="rHospitalEmail" name="rHospitalEmail"><br>
+
+<!--    <input type="text" th:field="*{rHospitalName}" >-->
+<!--    <br>-->
+<!--    <input type="text" th:field="*{rHospitalDivision}"> <br>-->
+<!--    <input type="text"  th:field="*{rHospitalUpozila}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalDistrict}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalReportName}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalSpeech}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo1}" placeholder="email"><br>-->
+
+<!--    <input type="text"  th:field="*{rHospitalLogo2}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo3}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo4}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo5}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo6}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo7}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalLogo8}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalPhone1}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalPhone2}" placeholder="email"><br>-->
+<!--    <input type="text"  th:field="*{rHospitalEmail}" placeholder="email"><br>-->
+
+<!--    <select-->
+<!--        class="form-select" name="refferedBy" id="refferedBy"-->
+<!--        style="height: 30px; font-size: 12px;">-->
+<!--    <option value="">-&#45;&#45; Select -&#45;&#45;</option>-->
+<!--    <option th:each="refDr : ${employee}" th:text="${refDr.lastName}">-->
+<!--</select>-->
+    <button type=submit>Save Employee</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+
+		<a th:href="@{/showNewEmployeeFrom}">Add Employee</a>
+		<h1>Employee List</h1>
+		<table border=1>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>uuid</th>
+					<th>testid</th>
+					<th>testName</th>
+					<th>patientName</th>
+
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="patient : ${listPatient}">
+					<td th:text="${patient.id}"></td>
+					<td th:text="${patient.uuid}"></td>
+					<td th:text="${patient.testid}"></td>
+					<td th:text="${patient.testName}"></td>
+					<td th:text="${patient.patientName}"></td>
+					<td><a th:href="@{/showFromForUpdate/{id}(id=${employee.id})}">Update</a>
+						<a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

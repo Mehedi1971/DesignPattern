@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form th:action="@{/saveTeacher}" th:object="${Teacher}"
+      method="POST">
+    <input type="text" th:field="*{name}" placeholder="FirstName">
+    <br> <input type="text" th:field="*{email}" placeholder="email"><br>
+<!--    <select-->
+<!--        class="form-select" name="refferedBy" id="refferedBy"-->
+<!--        style="height: 30px; font-size: 12px;">-->
+<!--    <option value="">-&#45;&#45; Select -&#45;&#45;</option>-->
+<!--    <option th:each="refDr : ${employee}" th:text="${refDr.lastName}">-->
+<!--</select>-->
+    <button type=submit>Save Employee</button>
+</form>
+</body>
+</html>
